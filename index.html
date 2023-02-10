@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+        text-align: center;
+        font-family: sans-serif;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      .options {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin: 20px;
+      }
+      button {
+        padding: 10px 20px;
+        background-color: white;
+        color: black;
+        border: 2px solid black;
+        border-radius: 5px;
+        margin: 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to the strange website</h1>
+      <p>Choose an option:</p>
+      <div class="options">
+        <button id="color-change">Change color</button>
+        <button id="background-change">Change background</button>
+        <button id="text-change">Change text</button>
+      </div>
+      <p id="text">This is the default text</p>
+    </div>
+    <script>
+      const colorBtn = document.getElementById("color-change");
+      const backgroundBtn = document.getElementById("background-change");
+      const textBtn = document.getElementById("text-change");
+      const text = document.getElementById("text");
+
+      colorBtn.addEventListener("click", function() {
+        document.body.style.color =
+          document.body.style.color === "white" ? "red" : "white";
+      });
+
+      backgroundBtn.addEventListener("click", function() {
+        document.body.style.backgroundColor =
+          document.body.style.backgroundColor === "black"
+            ? "blue"
+            : "black";
+      });
+
+      textBtn.addEventListener("click", function() {
+        text.innerText = text.innerText === "This is the default text"
+          ? "This is the new text"
+          : "This is the default text";
+      });
+    </script>
+  </body>
+</html>
